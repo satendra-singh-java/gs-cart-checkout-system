@@ -1,8 +1,8 @@
 # gs-cart-checkout-system
 Grocery Store Checkout System Demo
 
-Overview :
-This is a straightforward REST service designed to calculate the bill for a grocery store and apply coupons discounts.
+## Overview :
+This is a straightforward REST service designed to calculate the bill for a grocery store by applying discount coupons.
 
 ## About :
 This repository contains a demo implementation of a grocery store shopping cart and checkout system by applying coupon discounts.
@@ -15,8 +15,10 @@ This repository contains a demo implementation of a grocery store shopping cart 
 - Only one coupon should be active for an item. If more than one identified the API will consider only the 1st active coupon.
 - Item name should be consistent and should be used as it is loaded from the configuration json file.
 - DB is not included and hence used Below json to load the item and coupons records
-  - items.json : will load the list of items and each unit price. (add more elements to this json to make more items available)
-  - coupons.json : will load the list of coupons with details. (add more elements to this json to make more coupons available)
+  - src/main/resources/items.json :
+    - will load the list of items and each unit price. (add more elements to this json to make more items available)
+  - src/main/resources/coupons.json :
+     - will load the list of coupons with details. (add more elements to this json to make more coupons available)
 
 ## Common Command :
 - Clone project to local system.
