@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Buy 2 Get1 Free (Bananas)",
+    "itemKey": "banana",
+    "type": "BUY_GET_FREE",
+    "buyQty": 2,
+    "freeQty": 1,
+    "bundleQty": null,
+    "bundlePrice": null,
+    "enabled": true
+  },
+  {
+    "name": "3 Oranges for 0.75",
+    "itemKey": "orange",
+    "type": "BUNDLE_PRICE",
+    "buyQty": null,
+    "freeQty": null,
+    "bundleQty": 3,
+    "bundlePrice": 0.75,
+    "enabled": true
+  }
+]
