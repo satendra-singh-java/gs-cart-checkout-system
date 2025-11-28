@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> Bill </title>
+</head>
+
+<body>
+<h2>Bill</h2>
+-------------Bill Pre Discount----------
+<table>
+    <tr>
+        <td>Item</td>
+        <td>Quantity</td>
+        <td>Price</td>
+        <td>Total</td>
+    </tr>
+    <tr th:each="itemRow : ${preDiscountItems}">
+        <td th:text="${itemRow.name}"></td>
+        <td th:text="${itemRow.quantity}"></td>
+        <td th:text="${itemRow.unitPrice}"></td>
+        <td th:text="${itemRow.lineTotal}"></td>
+    </tr>
+</table>
+-----------------------------------------------------
+<table>
+    <tr>
+        <td> Sub Total</td>
+        <td th:text="${subTotal}"></td>
+    </tr>
+</table>
+---------------Discounts----------------------------
+<table>
+    <tr>
+        <td>Coupon</td>
+        <td>Discount</td>
+    </tr>
+    <tr th:each="coupon : ${discountCoupons}">
+        <td th:text="${coupon.couponName}"></td>
+        <td th:text="${coupon.discountAmount}"></td>
+    </tr>
+</table>
+-----------------------------------------------------
+<table>
+    <tr>
+        <td> Total Discount : </td>
+        <td th:text="${totalDiscount}"></td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+        <td> Total : </td>
+        <td th:text="${finalAmount}"></td>
+    </tr>
+</table>
+----------------------------------------------------
+</body>
+</html>
