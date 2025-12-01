@@ -69,7 +69,7 @@ mvn spring-boot:run
   - Layered Architecture.
 - Used Design Patterns :
   - Singleton Design pattern.
-  - Factory Desing Pattern.
+  - Strategy Design Pattern.
   - MVC Design pattern.
 
 ## Endpoints :
