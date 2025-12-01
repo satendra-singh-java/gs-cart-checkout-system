@@ -17,8 +17,37 @@ This repository contains a demo implementation of a grocery store shopping cart 
 - DB is not included and hence used Below json to load the item and coupons records
   - src/main/resources/items.json :
     - will load the list of items and each unit price. (add more elements to this json to make more items available)
+      - Sample content :
+	      ```
+	      [
+			  {
+			    "name": "banana",
+			    "price": 0.5
+			  },
+			  {
+			    "name": "orange",
+			    "price": 0.3
+			  }
+		  ]
+	      ```
   - src/main/resources/coupons.json :
-     - will load the list of coupons with details. (add more elements to this json to make more coupons available)
+     - will load the list of coupons with details. (add more elements to this json to make more coupons available).
+     - Only those coupons which has its 'enable' parameter as 'true' will be considered. This parameter can be used for disabling and enabling coupons.
+       - Sample content :
+	       ```
+	       [
+			  {
+			    "name": "Buy 2 Get1 Free (Bananas)",
+			    "itemKey": "banana",
+			    "type": "BUY_GET_FREE",
+			    "buyQty": 2,
+			    "freeQty": 1,
+			    "bundleQty": null,
+			    "bundlePrice": null,
+			    "enabled": true
+			  }
+		   ]
+	       ```
 
 ## Common Command :
 - Clone project to local system.
@@ -41,11 +70,11 @@ mvn spring-boot:run
 - Used Design Patterns :
   - Singleton Design pattern.
   - Factory Desing Pattern.
-  - Prototype Design Pattern.
   - MVC Design pattern.
 
 ## Endpoints :
-### For JSON request and Response Only
+### For JSON request and Response :
+This API will take a json with parameter as 'cartInput', which is a string type and produces a json response.
 - URL :
   ```
   localhost:8080/api/cart/compute
@@ -98,6 +127,10 @@ mvn spring-boot:run
   "totalDiscount": 0.65
   }
   ```
+Important parameters in response jsons are : 
+- totalDiscount : this is the total discount applied on the cart.
+- subtotal : this is the total amount before discount.
+- finalAmount : this is the amount finally paid (this price is after discount)
 ### Access service Via UI (Thymeleaf used to return View Pages)
 - To submit request (cart elements)
   - URL :
