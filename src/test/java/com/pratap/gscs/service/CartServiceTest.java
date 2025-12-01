@@ -61,7 +61,7 @@ class CartServiceTest {
 
     @Test
     void testComputeDiscount() {
-        // Arrange
+        // GIVEN
         List<CartItemDTO> preDiscountItems = new ArrayList<>();
         preDiscountItems.add(new CartItemDTO("orange", 3, 10.0, 30.0));
 
@@ -78,10 +78,10 @@ class CartServiceTest {
         Mockito.when(strategy.computeDiscount(coupon, 3, 10.0)).thenReturn(5.0);
         Mockito.when(groceryStoreCommonUtils.round(5.0)).thenReturn(5.0);
 
-        // Act
+        // WHEN
         double totalDiscount = cartService.computeDiscount(preDiscountItems, discountsApplied);
 
-        // Assert
+        // THEN
         assertEquals(5.0, totalDiscount);
         assertEquals(1, discountsApplied.size());
         assertEquals("Orange coupon", discountsApplied.getFirst().getCouponName());

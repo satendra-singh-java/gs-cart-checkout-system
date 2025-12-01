@@ -20,7 +20,6 @@ public class DiscountStrategyFactory {
         return switch (couponType) {
             case CouponType.BUY_GET_FREE -> new BuyGetFreeStrategy();
             case CouponType.BUNDLE_PRICE -> new BundlePriceStrategy();
-            default -> throw new IllegalArgumentException("Unknown coupon couponType: " + couponType);
         };
     }
 }
